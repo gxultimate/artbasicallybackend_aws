@@ -1,0 +1,47 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+  "server": "nodemon ./app.js --ignore db.json",
+    "start": "pm2 start ecosystem.config.json --no-daemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.20.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-form-data": "^2.0.12",
+    "express-messages": "^1.0.1",
+    "express-validator": "^5.3.0",
+    "fs": "0.0.1-security",
+    "helmet": "^3.21.3",
+    "jade": "^1.11.0",
+    "lodash": "^4.17.19",
+    "lokijs": "^1.5.8",
+    "moment": "^2.22.2",
+    "mongoose": "^5.9.5",
+    "mongoose-mongodb-errors": "0.0.2",
+    "mongoose-paginate": "^5.0.3",
+    "mongoose-slug-updater": "^3.0.4",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^2.2.1",
+    "pm2": "^4.4.0",
+    "uuid": "^3.3.2",
+    "uuidv4": "^6.0.6"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.0",
+    "nodemon": "^1.18.3"
+  }
+}
