@@ -55,7 +55,7 @@ router.post('/addTransaction', (req, res) => {
 
 router.post('/addToCart', function(req, res) {
 	const request = req.body.data;
-
+	console.log(request, 'aws');
 	let query = { artworkName: request.artworkName, artistName: request.artistName };
 	let count = 0;
 	const cartList = Cart.find({ query }, (err, docs) => {

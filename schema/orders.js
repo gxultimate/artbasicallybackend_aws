@@ -28,6 +28,9 @@ const ordersSchema = mongoose.Schema({
     paymentStatus : {
         type: String,
         required : true
+    },
+    totalAmount:{
+        type:Number,
     }
 })
 
