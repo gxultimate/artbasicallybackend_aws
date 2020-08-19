@@ -49,7 +49,7 @@ const userSchema = mongoose.Schema({
         type: String,
 
     },
-    accBday: {
+    birthYear: {
         type: String
     },
     accContact: {

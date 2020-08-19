@@ -44,6 +44,7 @@ router.post('/addAccounts', async (req, res) => {
 				accEmailAddress: request.accEmailAddress,
 				accSuffix: request.accSuffix,
 				accContact: request.accContact,
+				birthYear: request.birthYear,
 				accReg: request.accReg,
 				username: request.Username,	
 				accessType: request.accessType,
@@ -54,8 +55,7 @@ router.post('/addAccounts', async (req, res) => {
 				accFollowers: request.accFollowers,
 				accPoints: request.accPoints,
 				accStatus: request.accStatus,
-				password: hash,
-			
+				password: hash,			
 				artistDescription: request.artistDescription,
 				accImg: request.accImg,
 				acc_Status: request.acc_Status,
