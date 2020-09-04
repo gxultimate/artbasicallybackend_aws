@@ -57,7 +57,7 @@ router.post('/addAccounts', async (req, res) => {
 				accStatus: request.accStatus,
 				password: hash,			
 				artistDescription: request.artistDescription,
-				accImg: request.accImg,
+				profile_Img: request.profile_Img,
 				acc_Status: request.acc_Status,
 				dateAdded: request.dateAdded,
 			});

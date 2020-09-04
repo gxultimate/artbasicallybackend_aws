@@ -1,8 +1,10 @@
+const printSize = require('./../schema/printSize');
 
 let express = require('express'),
     router = express.Router(),
     Category = require('../schema/categories'),
-    Style = require('../schema/style')
+    Style = require('../schema/style'),
+    PrintSize = require('./../schema/printSize')
 
 
 
@@ -35,7 +37,7 @@ router.get('/getCategories', (req, res) => {
 
 router.post('/editCategory', function (req, res) {
     const request = req.body.data;
-    console.log(request)
+  
     let query = {catID : request.catID}
     // console.log(req.body)
     Category.findOneAndUpdate(query , request, function(err, place) {
@@ -80,7 +82,7 @@ router.get('/getStyles', (req, res) => {
 
 router.post('/editStyle', function (req, res) {
     const request = req.body.data;
-    console.log(request)
+    
     let query = {styleID : request.styleID}
     // console.log(req.body)
     Style.findOneAndUpdate(query , request, function(err, place) {
@@ -91,6 +93,56 @@ router.post('/editStyle', function (req, res) {
       }
       setTimeout(() => {
         const style = Style.find({} , function(err, docs) {
+            res.json(docs)
+        })
+      }, 1200);
+     
+    })
+})
+
+
+
+router.post('/addprintSize', (req, res) => {
+    const request = req.body.data;
+    // console.log
+    const printSize = new PrintSize({
+
+        sizeID : request.sizeID,
+        printSize :request.printSize
+    })
+    printSize.save().then(result => {
+        setTimeout(() => {
+        const printSize = PrintSize.find({} , function(err, docs) {
+            res.json(docs)
+        })
+        }, 1200);
+    })
+.catch(err => {
+        console.log(err)
+})
+})
+
+router.get('/getprintSize', (req, res) => {
+    const printsize = PrintSize.find({} , function(err, docs) {
+        res.json(docs)
+    })
+ 
+})
+
+
+router.post('/editprintSize', function (req, res) {
+    const request = req.body.data;
+    
+    let query = {sizeID : request.sizeID}
+    // console.log(req.body)
+    Style.findOneAndUpdate(query , request, function(err, place) {
+      if(err){
+        return res
+        .status(500)
+        .send({error: "unsuccessful"})
+      }
+      setTimeout(() => {
+        const printsize = PrintSize.find({} , function(err, docs) {
             res.json(docs)
         })
       }, 1200);

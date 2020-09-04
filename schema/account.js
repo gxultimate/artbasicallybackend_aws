@@ -67,7 +67,7 @@ const userSchema = mongoose.Schema({
     artistDescription: {
         type: String
     },
-    accImg: {
+    profile_Img: {
         type: String
     },
     dateAdded: {
