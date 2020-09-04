@@ -1,6 +1,3 @@
-var express = require('express');
-var router = express.Router();
-
 const accountsRoute = require('./accountsRoute'),
 	artworkRoute = require('./artworkRoute'),
 	categoryRoute = require('./categoryRoute'),
