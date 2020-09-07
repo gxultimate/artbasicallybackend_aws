@@ -184,6 +184,24 @@ router.post('/loginAccounts', async function(req, res) {
 	}
 });
 
+router.post('/loginFBAccounts', async function(req, res) {
+	let request = req.body.data;
+	try {
+		const user = await Accounts.findOne({ accFname: request.accFname });
+		const isMatch = bcrypt.compareSync(request.accEmailAddress, user.accEmailAddress);
+
+		if (user.accEmailAddress === request.accEmailAddress) {
+			res.json(user);
+		} else if (!isMatch) {
+			res.send(false);
+		} else {
+			res.json(user);
+		}
+	} catch (e) {
+		res.send(false);
+	}
+});
+
 router.get('/getArtists', (req, res) => {
 	const artist = Accounts.find({},{useFindAndModify:false}, function(err, docs) {
 		let accList = docs.filter((acc) => {
