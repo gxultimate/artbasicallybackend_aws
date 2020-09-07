@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var formData = require('express-form-data');
 var cors = require('cors'),
 	path = require('path'),
 	multer = require('multer'),
@@ -10,7 +11,7 @@ var cors = require('cors'),
 	fs = require('fs'),
 	cloudinaryStorage = require('multer-storage-cloudinary');
 
-var routes = require('./routes');
+var route = require('./routes');
 var bodyParser = require('body-parser');
 var connectDB = require('./connection');
 var compression = require('compression');
@@ -43,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use('/public', express.static('public'));
-app.use('/', routes);
+app.use('/', route);
 
 app.post('/upload', parser.single('artworkImg'), (req, res) => {
 	const image = {};

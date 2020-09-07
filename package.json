@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-  "server": "nodemon ./app.js --ignore db.json",
+    "server": "nodemon ./app.js --ignore db.json",
     "start": "pm2 start ecosystem.config.json --no-daemon"
   },
   "keywords": [],
@@ -25,6 +25,7 @@
     "express-validator": "^5.3.0",
     "fs": "0.0.1-security",
     "helmet": "^3.21.3",
+    "http-errors": "^1.8.0",
     "jade": "^1.11.0",
     "lodash": "^4.17.19",
     "lokijs": "^1.5.8",
